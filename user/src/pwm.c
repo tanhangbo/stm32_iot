@@ -22,7 +22,7 @@ int tim_counter = 1895;//7200
 
 
 //test code
-void GPIO_PA7_Init(void)
+static void GPIO_PA7_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
   RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA , ENABLE); 						 
@@ -36,7 +36,7 @@ void GPIO_PA7_Init(void)
 
 
 
-void RCC_cfg()
+static void RCC_cfg()
 {
 	//开启TIM3的时钟
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
@@ -44,7 +44,7 @@ void RCC_cfg()
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO,ENABLE);
 }
 
-void GPIO_cfg()
+static void GPIO_cfg()
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
@@ -59,7 +59,7 @@ void GPIO_cfg()
 	GPIO_Init(GPIOB,&GPIO_InitStructure);
 }
 
-void TIMER_cfg()
+static void TIMER_cfg()
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
 
@@ -79,7 +79,7 @@ void TIMER_cfg()
 	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseStructure);
 }
 
-void PWM_cfg()
+static void PWM_cfg()
 {
 	TIM_OCInitTypeDef TimOCInitStructure;
 	//设置缺省值
