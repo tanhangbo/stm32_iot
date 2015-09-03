@@ -1,7 +1,9 @@
 
 #include "stm32f10x_usart.h"
 #include "misc.h"
-
+#include "uart.h"
+#include "string.h"
+#include "stdio.h"
 
 char uart_rx_log_buffer[100] = {0};
 int uart_rx_log_index = 0;
@@ -73,15 +75,16 @@ static void NVIC_cfg()
 
 
 
-void uart_send_data(char *data);
 
 void process_uart_command(char *cmd) {
+
+	printf("I have received %s\n", cmd + 1);
+
+	if (strncmp(cmd + 1, "reboot", strlen("reboot")) == 0) {
+		printf("reboot now...\n");
+		NVIC_SystemReset();
+	}
 	
-	uart_send_data(cmd);
-	//uart_send_data("sending ping to 192.168.0.1\n");
-
-		
-
 }
 
 void USART1_IRQHandler(void)
@@ -134,5 +137,11 @@ void uart_send_data(char *data)
 		USART_SendData(USART1,data[i]);
 		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET);
 	}
+}
+
+void uart_send_byte(char byte)
+{
+		USART_SendData(USART1,byte);
+		while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET);
 
 }
