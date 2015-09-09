@@ -1,43 +1,43 @@
 # stm32_iot
+
+
 This Repo aims at using STM32 to drive multiple peripherals to build up an interesting system. 
-Have fun!
+**Have fun!**
 
 
-Main ambition:
-Learn STM32 by driving peripherals. DIY is very interesting.
+### Main ambition:
+>Learn STM32 by driving peripherals. DIY is very interesting.
 
-Ambition1:
-Cooperate with OpenWrt router to build up a 2.4G - IR repeater.
+###Ambition1:
+>Cooperate with OpenWrt router to build up a 2.4G - IR repeater.
 
-Ambition2:
-Build up a alarm which has gesture control implemented by ultrasonic transducer
-and beeper.
+###Ambition2:
+>Build up a alarm which has gesture control implemented by ultrasonic transducer and beeper.
 
-Ambition3:
-Using MIC to detect id somebody has broken into your house.
+###Ambition3:
+>Using MIC to detect id somebody has broken into your house.
 
-Ambition4:
-Have not thought of.
-
+###Ambition4:
+>Have not thought of.
 
 
-peripheral list:
 
-----------ok list----------
+##peripheral list:
 
-IR
-log uart
+### ok list
 
-----------ongoing list----------
+- [x] IR
+- [x] log uart
 
-DH11
+### ongoing list
 
-----------todo list----------
+- [ ] DH11
 
-Nokia 5110 LCD
-SRF05
-HMC5883L
-NRF2401
-mic
-beeper
+###  todo list
 
+- [ ] Nokia 5110 LCD
+- [ ] SRF05
+- [ ] HMC5883L
+- [ ] NRF2401
+- [ ] mic
+- [ ] beeper
